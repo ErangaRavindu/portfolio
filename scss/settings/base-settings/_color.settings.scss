@@ -1,0 +1,204 @@
+
+//// Color
+/// @group colors
+
+/// @type Color
+$color-white: #ffffff !default;
+$color-black: #000000 !default;
+$color-black-light: #141415 !default;
+
+$color-gray-dark: #323a45 !default;
+$color-gray: #8C8C8C !default;
+$color-gray-medium: #757575 !default;
+$color-gray-light: #BBBFC3 !default;
+$color-gray-lighter: #D8D8D8 !default;
+$color-gray-lightest: #f1f1f1 !default;
+
+$color-gray-warm-dark: #494440 !default;
+$color-gray-warm-light: #e4e2e0 !default;
+$color-gray-cool-light: #dce4ef !default;
+
+$color-purple: #4c2c92 !default;
+
+// Descriptive colors
+
+$color-red-400: #FF9898 !default;
+$color-red-550: #FF6E6E !default;
+$color-red-650: #F45656 !default;
+$color-red-850: #A51140 !default;
+$color-red-900: #D75151 !default;
+
+$color-green-700: #007E33 !default;
+$color-green-850: #1CB2BB !default;
+
+//$color-blue-100: #D9E1E6 !default;
+//$color-blue-500: #1FDFEB !default;
+$color-blue-550: #00BBC2 !default;
+$color-blue-600: #1F72EB !default;
+$color-blue-800: #004555 !default;
+$color-blue-900: #254350 !default;
+
+$color-purple-600: #8B59E2 !default;
+
+$color-orange-100: #F6ECDD !default;
+$color-orange-650: #F28616 !default;
+
+// Functional colors
+$color-primary: #1C88ED !default;
+$color-primary-l70: #4CA8FF !default;
+$color-primary-l40: #99CEFF !default;
+$color-primary-l15: #D9EDFF !default;
+$color-primary-d50: #00417F !default;
+$color-primary-d30: #005CB3 !default;
+
+$color-secondary: $color-black-light !default;
+
+$color-base: $color-black-light !default;
+$color-focus: $color-gray-light !default;
+$color-visited: $color-purple !default;
+
+// Background colors
+$body-color: #fff !default;
+$color-expand: $color-gray-lightest !default;
+
+// Txt base colors
+$color-dark: #494D53 !default;
+$color-content: #141414 !default;
+$color-content--dark: #141415 !default;
+$color-content--primary: $color-primary !default;
+$color-content--secondary: $color-blue-800 !default;
+$color-content--link: $color-red-400 !default;
+$color-content--important: #EF3E3F !default;
+$color-content--success: #20CD93 !default;
+$color-content--muted: #9DA8AC !default;
+$color-content--light: $color-white !default;
+
+$color-headings: $color-content--dark !default;
+$color-warning: #FFCA63 !default;
+$color-important: #FF9797 !default;
+
+// Other utils
+$color-dark-shade: #364250;
+$color-light-border: #DBE5EC;
+$color-selected-bg: #EAECED;
+$color-expand-bg: #F0F5F8;
+
+$color-dark-shade-bg: #232526;
+$color-light-bg: #DDE4EB !default;
+
+$color-shadow: rgba(#000, 0.3) !default;
+$color-transparent: rgba(#000, 0) !default;
+
+// Action colors
+
+//Typo Specifics
+$color-body-txt: #3C4751 !default;
+$color-body-txt-1: #344754 !default;
+
+$color-bg-dark: #010103 !default;
+
+/*Flight Center Latest Colors*/
+
+//Black Colors
+$color-black-100: #1C1D20 !default;
+$color-black-200: #0E0E0E !default;
+$color-black-300: #0C1B29 !default;
+$color-black-400: #313131 !default;
+
+//White Colors
+$color-white-100: #F5F5F5 !default;
+$color-white-200: #E5E8F4 !default;
+
+//Gray Colors
+$color-gray-100: #494D52 !default;
+$color-gray-200: #878E96 !default;
+$color-gray-300: #6D7277 !default;
+$color-gray-400: #9DA8AC !default;
+$color-gray-500: #E7E8EE !default;
+$color-gray-600: #F3F4F9 !default;
+$color-gray-700: #D6DCDE !default;
+$color-gray-800: #E0E0E0 !default;
+$color-gray-900: #E4E6F1 !default;
+$color-gray-9100: #e0e0e0 !default;
+$color-gray-A00: #DDE3EA !default;
+$color-gray-B00: #F3F3F3 !default;
+$color-gray-9x: #BBC5D3 !default;
+$color-gray-10x: #4E4E4E !default;
+$color-gray-11: #A3A4A6 !default;
+$color-gray-12: #eeeeee !default;
+$color-gray-13: #5E6369 !default;
+$color-gray-14: #EBEDF6 !default;
+$color-gray-15: #DEDFE0 !default;
+$color-gray-16: #F8F9FE !default;
+$color-gray-17: #868585 !default;
+$color-gray-18: #878e96 !default;
+$color-gray-19: #ebedf6 !default;
+$color-gray-20: #dedfe0 !default;
+$color-gray-21: #DEE6F5 !default;
+$color-gray-22: #EEEFEF !default;
+$color-gray-23: #C8C8C8 !default;
+$color-gray-24: #6F7479 !default;
+$color-gray-25: #868E97 !default;
+$color-gray-26: #494d52 !default;
+
+//Green Colors
+$color-green-100: #EFFBEF !default;
+$color-green-200: #38C7BF !default;
+$color-green-300: #D1F8EA !default;
+$color-green-400: #45C842 !default;
+$color-green-500: #41963F !default;
+$color-green-600: #CFF2CD !default;
+$color-green-700: #008000 !default;
+$color-green-800: #2E6B2D !default;
+
+//Blue Colors
+$color-blue: #1132d4 !default;
+$color-blue-100: #B2DAFF !default;
+$color-blue-200: #0bb5ff !default;
+$color-blue-300: #0084FF !default;
+$color-blue-400: #4CA8FF !default;
+$color-blue-500: #D9EDFF !default;
+$color-blue-600: #3142DD !default;
+$color-blue-700: #A9F3FF !default;
+$color-blue-760: #194B9C !default;
+$color-blue-8x: #4859EC !default;
+$color-blue-9x: #4CD6D6 !default;
+$color-blue-10x: #e3eef9 !default;
+$color-blue-11: #256CE0 !default;
+$color-blue-12: #BED2F4 !default;
+$color-blue-13: #208AED !default;
+$color-blue-14: #4581E4 !default;
+$color-blue-15: #12356F !default;
+$color-blue-16: #E3EEF9 !default;
+$color-blue-17: #0072EA !default;
+$color-blue-18: #ECF3FF !default;
+$color-blue-19: #C9D6EB !default;
+$color-blue-20: #CDD2E5 !default;
+$color-blue-21: #EBF5FF !default;
+
+//Red Colors
+$color-red-100: #EF3637 !default;
+$color-red-200: #F75B5B !default;
+$color-red-250: #FF5A5B !default;
+$color-red-300: #EF3E3F !default;
+$color-red-500: #E85C5D !default;
+$color-red-600: #FACCCC !default;
+$color-red-700: #F3CACA !default;
+$color-red-800: #6B2828 !default;
+$color-red-900: #ef3e3f !default;
+$color-red-9x: #f4f4f4 !default;
+$color-red-950: #f3caca !default;
+
+/* Yellow Color */
+$color-yellow: #FEBB00 !default;
+$color-yellow-100: #E49613 !default;
+$color-yellow-200: #FFD066 !default;
+$color-yellow-300: #755C14 !default;
+$color-yellow-400: #fdedce !default;
+$color-yellow-500: #FFBD26 !default;
+
+/* Brown Color */
+$color-brown: #A06479 !default;
+$color-brown-100: #FFE7B2 !default;
+$color-brown-200: #A4811C !default;
+$color-brown-300: #70520E !default;

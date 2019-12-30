@@ -1,0 +1,27 @@
+
+// Since we ar using sass map to set breakpoint values it'll be bit default to apply direct breakpoint mixing.
+// this mixing will take care of that part.
+@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+
+
+$responsive-approch: mf !default; //(mf = mobile first, df= desktop first) // mobile first
+
+@mixin set-breakpoint($break, $approch: $responsive-approch) {
+  $breakpoint: map_get($breakpoints, #{$break});
+  @if $approch == mf {
+    @include mq($breakpoint) {
+      @content
+    }
+  } @else if $approch == js {
+    .\@#{$break} & {
+      @content
+    }
+  }  @else {
+    $max-breakpoint: $breakpoint - 1;
+    @include mq(max-width $max-breakpoint) {
+    @content
+    }
+  }
+}
+

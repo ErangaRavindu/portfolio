@@ -1,0 +1,33 @@
+{
+  "name": "eranga_gunawardana",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-util": "latest",
+    "gulp-sass": "latest",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-gzip": "^1.4.2",
+    "gulp-coffee": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "sassdoc": "^2.5.0"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.24.5",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-themes": "^2.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglifycss": "^1.1.0",
+    "material-components-web": "^3.2.0"
+  }
+}

@@ -1,0 +1,74 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+//// @type Spacing
+
+$breakpoints: (
+        'x-small'    : 568px,   //Mobile
+        'small'      : 768px,
+        'medium'     : 769px,   //Tablet
+        'x-medium'   : 978px,
+        'large'      : 1024px,  //Laptop
+        'x-large'    : 1200px   //Desktop
+);
+
+
+// Border styles
+$global-border-style: 1px solid $color-black !default;
+$global-border-style--light: 1px solid #E4E6F1 !default;
+$global-border-style--lighter: 1px solid #E9E9E9 !default;
+
+
+// Box shadows
+$global-box-shadow: 0 4px 8px 4px rgba(196, 196, 196, 0.5) !default;
+$global-box-shadow-1: 0 1px 2px 0 rgba(0, 0, 0, 0.15) !default;
+
+$global-box-shadow--hover: 0 0 4px 0 rgba(0, 0, 0, 0.6) !default;
+$global-box-shadow--selected: 0 2px 20px 0 rgba(198, 196, 196, 0.5) !default;
+
+$tile-box-shadow: 0 15px 10px  rgba(0,0,0,0.25);
+
+// Linear Gradients
+$global-linear-gradient--primary: linear-gradient(118deg, #3D22A2 0%, #256CE0 100%) !default;
+$global-linear-gradient--secondary: linear-gradient(132.86deg, #5552B8 0%, #A3A0FB 100%) !default;
+
+// Standardise some UI treatments.
+
+$global-border-radius: 3px !default;
+$global-transition: all 300ms ease-in-out !default;
+
+$global-modal-view: true !default;
+
+// Element height
+$base-ele-height-tiny:      28px !default;
+$base-ele-height-small:     35px !default;
+$base-ele-height:           40px !default;
+$base-ele-height-medium:    60px !default;
+
+
+// Overlay
+$gloabal-overlay-style: rgba(77, 92, 116, 0.8) !default;
+
+//trasistions
+
+$transition001: all .3 ease;
+
+//AVATAR
+$avatar-s: 36px;
+$avatar-s-border-radius: 18px;
+
+//tile-colored
+
+$a-title-txt-color1: #fff ;
+$a-title-txt-color2:rgba(255,255,255,0.5) ;
+$a-title-txt-color3:rgba(0,0,0,0.8) ;
+$a-tile-value-color:#2E2E2E ;
+$a-tile-type-icon-h: 12px ;
+
+
+$l-contaent-wrapper-radius: 5px;
+$l-contaent-wrapper-padding: 15px;
+

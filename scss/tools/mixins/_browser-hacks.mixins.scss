@@ -1,0 +1,50 @@
+
+@mixin only-firefox(){
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+/// Only Safari
+/// @group Browser hacks
+/// @author Upul Wickramasinghe
+
+@mixin only-safari(){
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) {
+    @content;
+  }}
+}
+
+///  Only IE
+/// @group Browser hacks
+/// @author Upul Wickramasinghe
+
+
+
+@mixin only-ie() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+//  ==========================================================================
+//  Scrollbar Styling
+// ==========================================================================
+@mixin styled-scroll-bar($width:10px, $track: #D7D7D7, $thumb: #828282 ){
+  &::-webkit-scrollbar{
+    width: $width;
+  }
+  &::-webkit-scrollbar:horizontal{
+    height: $width;
+  }
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+  }
+  //-webkit-overflow-scrolling: touch;
+  //-ms-overflow-style: -ms-autohiding-scrollbar;
+}

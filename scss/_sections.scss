@@ -1,0 +1,32 @@
+
+.intro{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: left;
+  height: calc(100vh - 80px);
+  .intro__content{
+    min-height: 50px;
+    .calling{
+      width: 100%;
+      font-weight: 300;
+      @include set-font-size(48px);
+    }
+    .name{
+      width: 100%;
+      font-weight: 500;
+      @include set-font-size(86px);
+    }
+    .des{
+      width: 100%;
+      font-weight: 400;
+      @include set-font-size(18px);
+    }
+  }
+  .abstract-item--01{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: 0;
+  }
+}

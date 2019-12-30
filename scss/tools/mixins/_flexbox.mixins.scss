@@ -1,0 +1,68 @@
+
+/// All-in-one Flex-box Container ( $direction, $wrap-type, $main-axis, $cross-axis,$packing)
+@mixin flex-box-container ($args...){
+  display: flex;
+  @if(length($args)==1){
+    flex-flow: nth($args,1);
+  } @else if(length($args)==2){
+    flex-flow: nth($args,1) nth($args,2);
+  }@else if(length($args)==3){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+  }
+  @else if(length($args)==4){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+    align-items: nth($args,4);
+  }@else if(length($args)==5){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+    align-items: nth($args,4);
+    align-content: nth($args,5);
+  }
+}
+
+/// Flex inline container
+@mixin flex-inline-container ($args...){
+  display: inline-flex;
+  @if(length($args)==1){
+    flex-flow: nth($args,1);
+  } @else if(length($args)==2){
+    flex-flow: nth($args,1) nth($args,2);
+  }@else if(length($args)==3){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+  }
+  @else if(length($args)==4){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+    align-items: nth($args,4);
+  }@else if(length($args)==5){
+    flex-flow: nth($args,1) nth($args,2);
+    justify-content: nth($args,3);
+    align-items: nth($args,4);
+    align-content: nth($args,5);
+  }
+}
+
+@mixin absolute-center($position: absolute, $width: null, $height: null) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+
+  @if not $width and not $height {
+    transform: translate(-50%, -50%);
+  } @else if $width and $height {
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2)
+  } @else if not $height {
+    margin-left: -($width / 2);
+    transform: translateY(-50%);
+    width: $width;
+  } @else {
+    margin-top: -($height / 2);
+    transform: translateX(-50%);
+    height: $height;
+  }
+}

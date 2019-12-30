@@ -1,0 +1,91 @@
+
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str_index($string, $search);
+
+  @if $index {
+    @return str_slice($string, 1, $index - 1) + $replace + str-replace(str_slice($string, $index + str_length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@function replace($list, $old-value, $new-value, $recursive: false) {
+  $result: ();
+
+  @for $i from 1 through length($list) {
+    @if type-of(nth($list, $i)) == list and $recursive {
+      $result: append(
+                      $result,
+                      replace(nth($list, $i), $old-value, $new-value, $recursive)
+      );
+    } @else {
+      @if nth($list, $i) == $old-value {
+        $result: append($result, $new-value);
+      } @else {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
+
+  @return $result;
+}
+
+
+@function grid-repeat($repeat, $stuff: 1fr) {
+  $list: ();
+  @for $i from 1 through $repeat {
+    $list: append($list, $stuff, space);
+  }
+  @return $list;
+}
+
+/// Add Gap between the boxes
+/// @param   {list}    $boxes - List with box sizes
+/// @param   {string}  $gap - Optional column gap
+@function list-format($list, $modifier: null) {
+
+  $new-list: ();
+
+  @for $i from 1 through length($list) {
+    $new-list: append($new-list, nth($list, $i), space);
+
+    // Adding Modifier Between
+    @if $modifier >= 0 {
+      // Not last Loop
+      @if $i != length($list) {
+        $new-list: append($new-list, $modifier, space);
+      }
+    }
+  }
+
+  @return $new-list;
+}
+
+
+@function svg-uri($svg) {
+  $encoded: '';
+  $slice: 2000;
+  $index: 0;
+  $loops: ceil(str-length($svg) / $slice);
+
+  @for $i from 1 through $loops {
+    $chunk: str-slice($svg, $index, $index + $slice - 1);
+    $chunk: str-replace($chunk, '"', "'");
+    $chunk: str-replace($chunk, '<', '%3C');
+    $chunk: str-replace($chunk, '>', '%3E');
+    $chunk: str-replace($chunk, '&', '%26');
+    $chunk: str-replace($chunk, '#', '%23');
+    $encoded: #{$encoded}#{$chunk};
+    $index: $index + $slice;
+  }
+
+  @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}

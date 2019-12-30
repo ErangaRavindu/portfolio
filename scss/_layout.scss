@@ -1,0 +1,26 @@
+.container-fluid{
+  width: 100%;
+  padding: 15px;
+}
+.container{
+  padding: 0 15px;
+  width: 100%;
+  margin: auto;
+  @include set-breakpoint(xs-small) {
+  }
+  @include set-breakpoint(x-small) {
+  }
+  @include set-breakpoint(small) {
+  }
+  @include set-breakpoint(x-small) {
+  }
+  @include set-breakpoint(x-medium) {
+  }
+  @include set-breakpoint(large) {
+    max-width: 1366px;
+  }
+  @include set-breakpoint(x-large) {
+    max-width: 1366px;
+  }
+
+}

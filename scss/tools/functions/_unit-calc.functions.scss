@@ -1,0 +1,31 @@
+
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+/// Returns the rem vaule of pixels
+/// @param {Number} $pixels - Size in pixels
+/// @param {Number} $context [$browser-context] - Browser context
+/// @return {em} - Rem value of the pixel
+/// @author Upul Wickramasinghe
+
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

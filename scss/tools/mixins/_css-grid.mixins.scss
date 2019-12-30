@@ -1,0 +1,164 @@
+
+
+/// Check for modern grid support
+@mixin grid-support(){
+  @supports (grid-area: auto) {
+    @content;
+  }
+}
+
+
+/// Grid container
+@mixin  grid-container($args...){
+  display: -ms-grid;
+  display: grid;
+
+  @if(length($args)==1){
+    grid-gap: nth($args,1);
+  } @else if(length($args)==2){
+    grid-gap: nth($args,1);
+    justify-items: nth($args,2); // start|end|center|stretch
+  }@else if(length($args)==3){
+    grid-gap: nth($args,1);
+    justify-items: nth($args,2); // start|end|center|stretch
+    align-items: nth($args,3); // start|end|center|stretch
+  }
+  @else if(length($args)==4){
+    grid-gap: nth($args,1);
+    justify-items: nth($args,2); // start|end|center|stretch
+    align-items: nth($args,3); // start|end|center|stretch
+    justify-content: nth($args,4); // start|end|center|stretch|space-around|space-between|space-evenly
+  }@else if(length($args)==5){
+    grid-gap: nth($args,1);
+    justify-items: nth($args,2); // start|end|center|stretch
+    align-items: nth($args,3); // start|end|center|stretch
+    justify-content: nth($args,4); // start|end|center|stretch|space-around|space-between|space-evenly
+    align-content: nth($args,5); // start|end|center|stretch|space-around|space-between|space-evenly
+  }
+}
+
+/// Grid template rows
+@mixin grid-template-rows($rows, $grid-gap: $base-element-gap) {
+  -ms-grid-rows: list-format($rows, $grid-gap);
+  grid-template-rows: $rows;
+  @if $grid-gap > 0 {
+    grid-row-gap: $grid-gap;
+  }
+}
+
+/// Grid template columns
+@mixin grid-template-columns($columns, $grid-gap: $base-element-gap) {
+  -ms-grid-columns: list-format($columns, $grid-gap);
+  grid-template-columns: $columns;
+  @if $grid-gap > 0 {
+    grid-column-gap: $grid-gap;
+  }
+}
+
+/// Grid row assign
+@mixin grid-row($args...){
+  @if(length($args)==1){
+    -ms-grid-row: nth($args,1)*2 - 1;
+    grid-row: nth($args,1);
+  } @else if(length($args)==2){
+    -ms-grid-row: nth($args,1)*2 - 1;
+    -ms-grid-row-span: nth($args,2) - nth($args,1) + 1;
+    grid-row: #{nth($args,1)}/#{nth($args,2)};
+  }
+}
+
+
+/// Grid column assign
+@mixin grid-column($args...){
+  @if(length($args) == 1){
+    -ms-grid-column: nth($args, 1)*2 - 1;
+    grid-column: nth($args,1);
+  } @else if(length($args)==2){
+    -ms-grid-column: nth($args, 1)*2 - 1;
+    -ms-grid-column-span: nth($args,2) - nth($args,1) + 1;
+    grid-column: #{nth($args,1)}/#{nth($args,2)};
+  }
+}
+
+
+
+/// Generates IE10/11 grid placement to simulate grid-auto-flow.
+/// @group CSS Grid
+/// @author Upul Wickramasinghe
+///
+/// @param {string} $autoflow - value for "grid-auto-flow". Either 'column' or 'row'.
+/// @param {number} $columns - number of columns in the grid
+/// @param {number} $rows - number of rows in the grid
+///
+/// @example scss -
+///   .grid {
+///     @include grid-autoflow(row, 3, 5);
+///   }
+
+
+@mixin grid-autoflow($autoflow, $columns, $rows, $display: block) {
+
+  grid-auto-flow: $autoflow;
+
+  $columns: $columns * 2 - 1;
+  $rows: $rows * 2 - 1;
+  $counter: 1;
+
+  @if ($autoflow == 'column') {
+    @for $i from 1 through $columns {
+      @for $j from 1 through $rows {
+
+        @if ($i % 2 == 0) {
+          // This is a column gap. Don't place the next element.
+        } @else if ($j % 2 == 0) {
+          // This is a row gap. Don't place the next element.
+        } @else {
+          // Place the next element in column $i and row $j.
+          @include only-ie(){
+           & > :nth-child(#{$counter}) {
+             display: $display;
+              -ms-grid-column: $i;
+              -ms-grid-row: $j;
+            }
+          }
+          $counter: $counter + 1;
+        }
+      }
+    }
+  } @else if ($autoflow == 'row') {
+    @for $i from 1 through $rows {
+      @for $j from 1 through $columns {
+
+        @if ($i % 2 == 0) {
+          // This is a row gap. Don't place the next element.
+        } @else if ($j % 2 == 0) {
+          // This is a column gap. Don't place the next element.
+        } @else {
+          // Place the next element in row $i and column $j.
+          @include only-ie() {
+           & > :nth-child(#{$counter}) {
+             display: $display;
+              -ms-grid-column: $j;
+              -ms-grid-row: $i;
+            }
+          }
+          $counter: $counter + 1;
+        }
+      }
+    }
+  }
+}
+
+@mixin grid-row-align($align){ // start|end|center|stretch
+  -ms-grid-row-align: $align;
+  align-self: $align;
+
+}
+
+
+@mixin grid-column-align($align){ // start|end|center|stretch
+  -ms-grid-column-align: $align;
+  justify-self: $align;
+}
+
+

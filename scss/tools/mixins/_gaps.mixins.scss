@@ -1,0 +1,27 @@
+
+
+
+//Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+/*
+Usage definition
+@include padding(top, right, bottom, left);
+@include margin(top, right, bottom, left);
+Usage 1
+@include padding(1px, 2px, 3px, 4px,);
+@include margin(1px, 2px, 3px, 4px);
+*/

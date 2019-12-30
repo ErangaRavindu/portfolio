@@ -1,0 +1,292 @@
+@include font-face(proxima-nova, '../assets/fonts/proxima/ProximaNova', $font-weight--normal, normal, ttf);
+@include font-face(proxima-nova, '../assets/fonts/proxima/ProximaNova-Bold', $font-weight--bold, normal, ttf);
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+p {
+  @include set-font-size($base-font-size, $base-line-height);
+  margin: 0.1em 0 1em;
+}
+
+a {
+  color: $color-content--dark;
+  text-decoration: underline;
+
+  &:hover,
+  &:active {
+    color: $color-primary-d30;
+  }
+
+  //&:focus {
+    //outline: $focus-outline;
+    //outline-offset: $focus-spacing;
+  //}
+
+  //&:visited {
+  //  color: $color-visited;
+  //}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin-bottom: 0.5em;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--strong;
+  line-height: 1.3;
+}
+
+// Remove user agent styles
+
+cite,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+
+
+// title styling object
+// combining with .t-heading makes a header title
+%title-styling{
+  margin: 0;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--bold;
+  line-height: 1.5;
+  letter-spacing: 0.23px;
+  color: $color-black-100;
+  &.t-heading{
+    margin: 1em 0 0.4em;
+  }
+}
+
+.t1{
+  @extend %title-styling;
+  //font-size: $base-font-size--xlarge;
+  //@include set-breakpoint(x-small){
+  font-size: $base-font-size--xxlarge;
+  font-weight: 500;   // changed for fc branding 700
+  //}
+}
+
+.t2{
+  @extend %title-styling;
+  //font-size: $base-font-size--large ;
+  //@include set-breakpoint(x-small){
+  font-size: $base-font-size--xlarge;
+  font-weight: 500;   // changed for fc branding 700
+  //}
+}
+
+.t3{
+  @extend %title-styling;
+  //font-size: $base-font-size--medium;
+  //@include set-breakpoint(x-small){
+    font-size: $base-font-size--large;
+  //}
+}
+
+.t4{
+  @extend %title-styling;
+  //font-size: $base-font-size;
+  //@include set-breakpoint(x-small){
+    font-size: $base-font-size--medium;
+  //}
+}
+
+.t5{
+  @extend %title-styling;
+  //font-size: $base-font-size--small;
+  //@include set-breakpoint(x-small){
+    font-size: $base-font-size;
+  //}
+}
+
+.t6{
+  @extend %title-styling;
+  //font-size: $base-font-size--small - 1;
+  //@include set-breakpoint(x-small){
+    font-size: $base-font-size--small;
+  //}
+}
+
+%text-styling {
+  font-family: $font-family--primary;
+  letter-spacing: $letter-spacing--normal;
+  color: $color-gray-100;
+}
+
+.s1{
+  @extend %text-styling;
+  //@include set-font-size($base-font-size--large);
+  //@include set-breakpoint(x-small){
+    font-size: $base-font-size--xlarge;
+  //}
+}
+
+.s2{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--large);
+}
+
+.s3{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--medium);
+}
+
+.s4{
+  @extend %text-styling;
+  @include set-font-size($base-font-size, $base-line-height);
+}
+
+.s5{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--small, $base-line-height--small);
+}
+
+.s6{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--xsmall, 1.5);
+}
+
+.s6-text{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--normal, 1.33);
+}
+
+.s7{
+  @extend %text-styling;
+  @include set-font-size($base-font-size--xsmall);
+}
+
+.lbl {
+  @include set-font-size($base-font-size--normal ,$base-line-height--xsmall);
+  text-transform: uppercase;
+  font-weight: $font-weight--bold;
+  letter-spacing: $letter-spacing--caps;
+}
+
+// Typography text styles
+
+// Default text style
+.ts-default {
+  color: $color-content;
+}
+
+.ts-dark {
+  color: $color-content--dark;
+}
+
+// Primary text style
+.ts-primary {
+  color: $color-content--primary;
+}
+
+.ts-secondary {
+  color: $color-content--secondary;
+}
+
+.ts-tertiary {
+  color: $color-red-250;
+}
+
+.ts-link{
+  color: $color-content--link;
+}
+
+.ts-important{
+  color: $color-content--important;
+  font-weight: $font-weight--normal;
+}
+
+.ts-muted {
+  color: $color-content--muted;
+}
+
+.ts-light {
+  color: $color-content--light;
+}
+
+.ts-wet {
+   opacity: 0.5;
+}
+
+.ts-success {
+  color: $color-content--success;
+}
+
+.ts-uppercase {
+  text-transform: uppercase;
+}
+
+.ts-italic {
+  font-style: italic;
+  font-weight: $font-weight--light;
+}
+
+.ts-strike {
+  text-decoration: line-through;
+}
+
+.ts-normal {
+  font-weight: $font-weight--normal;
+}
+
+.ts-strong {
+  font-weight: $font-weight--strong;
+}
+
+.ts-bold {
+  font-weight: $font-weight--bold;
+  letter-spacing: 0.13px;
+}
+
+.ts-dotted {
+  border-bottom: 1px dotted currentColor;
+}
+
+//Text colors
+.tc-primary {
+  color: $color-content--primary;
+}
+
+.tc-secondary {
+  color: $color-content--secondary;
+}
+
+.tc-tertiary {
+  color: $color-red-250;
+}
+
+.tc-success {
+  color: $color-supp-green;
+}
+
+.tc-warning{
+  color: $color-supp-orange;
+}
+
+.tc-important{
+  color: $color-supp-red;
+}
+
+.tc-muted {
+  color: $color-content--muted;
+}
+
+.tc-light {
+  color: $color-content--light;
+}
+
+.tc-dark {
+  color: $color-gray-900-0;
+}
+
+
+
+
+
+

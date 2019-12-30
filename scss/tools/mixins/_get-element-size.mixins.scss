@@ -1,0 +1,6 @@
+
+
+@mixin get-elements-size ($value) {
+  width: map_get($value, width);
+  height: map_get($value, height);
+}

@@ -1,0 +1,147 @@
+
+
+/// Creates a circle using css
+@mixin css-circle($size, $background, $border:none){
+  height: $size;
+  width: $size;
+  display: inline-block;
+  background: $background;
+  border: $border;
+  border-radius: 50%;
+}
+
+/// Creates a triangle using css
+/// Accepts only top,right,bottom and left directions
+@mixin css-triangle($width, $background, $direction, $is-pseudo:false, $height: $width){
+  width: 0;
+  height: 0;
+  @if $is-pseudo {
+    content: '';
+    display: block;
+  }
+  @if($direction == top) {
+    border-right: $width solid transparent;
+    border-bottom: $height solid $background;
+    border-left: $width solid transparent;
+  }
+  @if($direction == right) {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $height solid $background;
+  }
+  @if($direction == bottom) {
+    border-top: $height solid $background;
+    border-right: $width solid transparent;
+    border-left: $width solid transparent;
+  }
+  @if($direction == left) {
+    border-top: $width solid transparent;
+    border-right: $height solid $background;
+    border-bottom: $width solid transparent;
+  }
+}
+
+@mixin css-arrow($size, $color, $direction, $is-pseudo:false, $border: 1px){
+  width: $size;
+  height: $size;
+  background: transparent;
+  transform: rotate(45deg);
+  transform-origin: 100% 0;
+  @if $is-pseudo {
+    content: '';
+    display: block;
+  }
+  @if($direction == top) {
+    border: {
+      top: $border solid $color;
+      right: 0;
+      bottom: 0;
+      left: $border solid $color;
+    };
+  }
+  @if($direction == right) {
+    border: {
+      top: $border solid $color;
+      right: $border solid $color;
+      bottom: 0;
+      left: 0;
+    };
+  }
+  @if($direction == bottom) {
+    border: {
+      top: 0;
+      right: $border solid $color;
+      bottom: $border solid $color;
+      left: 0;
+    };
+  }
+  @if($direction == left) {
+    border: {
+      top: 0;
+      right: 0;
+      bottom: $border solid $color;
+      left: $border solid $color;
+    };
+  }
+}
+
+
+/// Creates a line with two circles at ends
+@mixin css-line-with-circles ($line-color: $color-gray, $line-size: 1px, $circle-color: $color-white, $circle-size: 11px) {
+  height: $line-size;
+  background: $line-color;
+  overflow: visible;
+  position: relative;
+  display: block;
+  line-height: $line-size;
+
+  &::after,
+  &::before {
+    @include pseudoelem(absolute);
+    @include absolute-vertical-center;
+    width: $circle-size;
+    height: $circle-size;
+    border: 1px solid $line-color;
+    border-radius: 50%;
+    background: $circle-color;
+  }
+
+  &::after {
+    right: -2px;
+  }
+
+  &::before {
+    left: -2px;
+  }
+}
+
+/// Creates a dotted line
+@mixin dotted-line($color: $color-gray-light, $size: 1, $gap: 10){
+  background: {
+    repeat: repeat-x;
+    image: svg-uri('<svg xmlns="http://www.w3.org/2000/svg" width="'+ $gap +'" height="'+ $size * 2 +'"><circle cx="'+ $size +'" cy="'+ $size +'" r="'+ $size +'" fill="'+ $color +'"/></svg>');
+  };
+}
+
+@mixin dotted-border($border-size: 1, $gap: 6 , $slice : $gap){
+  $size: $border-size / 2;
+  $image-gap: $gap * 3;
+  border: #{$border-size}px dotted #9DA8AC;
+  border-image-source: svg-uri('<svg xmlns="http://www.w3.org/2000/svg" width="'+  $image-gap +'" height="'+ $image-gap +'" >
+  <g>
+	<circle style="fill:#9DA8AC;" cx="'+ $size +'" cy="'+ ($image-gap - $size) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ $size +'" cy="'+ ($image-gap / 2) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ $size +'" cy="'+ $size +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap / 2) +'" cy="'+ ($image-gap - $size) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap / 2) +'" cy="'+ ($image-gap / 2) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap / 2) +'" cy="'+ $size +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap - $size) +'" cy="'+ ($image-gap - $size) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap - $size) +'" cy="'+ ($image-gap / 2) +'" r="'+ $size +'"/>
+        <circle style="fill:#9DA8AC;" cx="'+ ($image-gap - $size) +'" cy="'+ $size +'" r="'+ $size +'"/>
+</g>
+</svg>');
+  border-image-slice: $slice;
+  border-image-width: auto;
+  border-image-repeat: round;
+  border-image-outset: #{$size}px;
+}

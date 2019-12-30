@@ -1,0 +1,123 @@
+
+/// inline align horizontally middle
+@mixin inline-align-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/// align center absolute div block
+@mixin center-absolute-block {
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/// vertically center absolute div block
+@mixin absolute-vertical-center($position:null) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/// horizontally center absolute div block
+@mixin absolute-horizontal-center($position:null) {
+  position: $position;
+  right: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  // Added !important for overriding rtl styles
+}
+
+/// text truncate
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@mixin modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(77, 92, 116, 0.8);
+}
+
+/// pseudo-element block
+@mixin pseudoelem($postion, $content:null){
+  position: $postion;
+  display: block;
+  @if $content == null {
+    content: '';
+  } @else {
+    content: "#{$content}";
+  }
+  @content
+}
+
+
+/// SVG icon element
+@mixin svg-icon($icon, $color: $color-content, $size: 1em){
+  $val: map-get($svg-map, $icon);
+  $mod-val: str-replace($val, 'currentColor', $color);
+  background: {
+    image: svg-uri($mod-val);
+    repeat: no-repeat;
+    position: center;
+    size: $size $size;
+  };
+
+  //content: svg-uri($val);
+  //width: $size;
+  //height: $size;
+}
+
+
+
+/// Sets overflow scrolling
+@mixin inner-scroll($direction: null, $method: auto){
+  @if ($direction == x){
+    overflow: {
+      x: $method;
+      y: hidden;
+    };
+  } @else if( $direction == y){
+    overflow: {
+      x: hidden;
+      y: $method;
+    };
+  } @else {
+    overflow: $method;
+  }
+  -webkit-overflow-scrolling: touch;
+
+  @include set-breakpoint(medium, df) {
+    &::-webkit-scrollbar{
+      width: 0 !important;
+    }
+    &::-webkit-scrollbar:horizontal{
+      height: 0 !important;
+    }
+    overflow: -moz-scrollbars-none;
+  }
+
+}
+
+/// expanded background
+@mixin expand-background($expand) {
+  margin: -$expand;
+  padding: $expand;
+}
+
+/// background image
+@mixin background-img($width, $height, $size: cover, $position: center center ) {
+  width: $width;
+  height: $height;
+  background: {
+    repeat: no-repeat;
+    position: $position;
+    size: $size;
+  };
+}

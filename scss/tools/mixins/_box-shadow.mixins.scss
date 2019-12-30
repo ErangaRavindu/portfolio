@@ -1,0 +1,10 @@
+//* ========================================================================
+//   #BOX_SHADOW
+//   ======================================================================== */
+
+// Mixin to quickly apply for box shadows
+
+@mixin full-width-bar($background, $width: 40vw) {
+  background: $background;
+  box-shadow: -$width 0 0 0 $background, $width 0 0 0 $background;
+}

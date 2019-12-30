@@ -1,0 +1,40 @@
+// global
+$breakpoints: (
+        'xs-small'    : 300px,   //Mobile
+        'x-small'    : 568px,   //Mobile
+        'small'      : 768px,
+        'medium'     : 769px,   //Tablet
+        'x-medium'   : 978px,
+        'large'      : 1024px,  //Laptop
+        'x-large'    : 1200px,   //Desktop
+        'xl-large'    : 1400px   //Desktop
+);
+
+
+//colors
+$orange:#FF4400;
+$blue:#036498;
+$orange-gradient: linear-gradient(180deg, #FF4400, #FF7600);
+$blue-gradient: linear-gradient(180deg, #036498, #1695D8);
+
+
+//font
+$global-font-size:    16px !default;
+
+$font-family--primary:        'Roboto', sans-serif;
+$font-family--secondary:      'Open Sans', Arial, sans-serif;
+
+$font-weight--strong: 500;
+$font-weight--bold: 500;
+
+
+// Box shadows
+$global-box-shadow: 0 4px 8px 4px rgba(196, 196, 196, 0.5) !default;
+$global-box-shadow-1: 0 1px 2px 0 rgba(0, 0, 0, 0.15) !default;
+
+$global-box-shadow--hover: 0 0 4px 0 rgba(0, 0, 0, 0.6) !default;
+$global-box-shadow--selected: 0 2px 20px 0 rgba(198, 196, 196, 0.5) !default;
+
+$tile-box-shadow: 0 15px 10px  rgba(0,0,0,0.25);
+
+$c-global-header--height: 80px;

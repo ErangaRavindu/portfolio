@@ -1,0 +1,35 @@
+$btn-padding: 12px 24px !default;
+.btn-container{
+  margin: 24px 0;
+}
+.btn{
+  @include set-font-size(16px);
+  display: inline-flex;
+  border-radius: 50px;
+  padding: $btn-padding;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-right: 16px;
+  &--orange{
+    background: $orange-gradient;
+    color: white;
+  }
+  &--blue{
+    background: $blue-gradient;
+    color: white;
+  }
+  &--o-orange{
+    border: 2px solid $orange;
+    color: $orange;
+  }
+  &--o-blue{
+    border: 2px solid $blue;
+    color: $blue;
+  }
+  &:hover{
+    box-shadow: $global-box-shadow--hover;
+  }
+}
+

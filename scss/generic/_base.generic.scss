@@ -1,0 +1,132 @@
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+
+$body-background: $body-color;
+
+body,html {
+  min-height: 100%;
+}
+
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+html {
+  box-sizing: border-box;
+  font-family: $font-family--primary;
+  font-size: $em-base;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+
+}
+
+body {
+  color: $color-content;
+  background: $body-background;
+  font-size: $base-font-size;
+  line-height: 1.4;
+  overflow-y: scroll;
+}
+
+
+/* ==========================================================================
+   #SHARED
+   ========================================================================== */
+
+/**
+ * Shared declarations for certain elements.
+ */
+
+
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+address,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: $base-element-gap;
+}
+
+
+
+/**
+ * Consistent indentation for lists.
+ */
+
+dd, ol {
+  margin-left: $base-element-gap;
+}
+ul{
+  margin: 0;
+  list-style-type: none;
+}
+input::placeholder {
+  opacity: 0.5;
+}
+
+/**
+ * Undo the red box-shadow glow added by Firefox on invalid inputs.
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-ui-invalid
+ */
+input:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+input[type=text]::-ms-clear{
+  display: none;
+}
+
+a svg,
+button svg,
+label svg {
+  pointer-events: none;
+}
+a{
+  text-decoration: none;
+}
+main{
+  position: relative;
+}
+
+/*
+ *  custom scroll
+ */
+.custom-scroll::-webkit-scrollbar-track
+{
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color:#E2E4EB;
+}
+
+.custom-scroll::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: #babac0;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb
+{
+  background-color: #828282;
+  border: none;
+  border-radius: 0;
+}
+
+.oh{
+  overflow: hidden;
+}
