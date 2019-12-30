@@ -25,3 +25,18 @@
   }
 
 }
+section{
+  margin-bottom: 50px;
+}
+.section-title{
+  @include set-font-size(36px);
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: $light-blue;
+}
+
+.section-des{
+  @include set-font-size(24px);
+  font-weight: 400;
+  margin-bottom: 30px;
+}
