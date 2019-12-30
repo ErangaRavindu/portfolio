@@ -6,6 +6,7 @@
   padding: 0 15px;
   width: 100%;
   margin: auto;
+  position: relative;
   @include set-breakpoint(xs-small) {
   }
   @include set-breakpoint(x-small) {

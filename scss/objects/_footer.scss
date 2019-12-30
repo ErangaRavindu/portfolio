@@ -1,0 +1,46 @@
+
+.footer{
+  background: $black-gradient;
+  padding: 50px 15px;
+  .footer-content{
+    display: grid;
+    grid-gap: 16px;
+    color: white;
+    @include set-breakpoint(xs-small) {
+      grid-template-columns: 1fr ;
+      grid-template-rows:1fr 1fr 1fr;
+    }
+    @include set-breakpoint(x-small) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    @include set-breakpoint(small) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    @include set-breakpoint(x-small) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    @include set-breakpoint(x-medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    @include set-breakpoint(large) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    @include set-breakpoint(x-large) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:1fr;
+    }
+    &__title{
+      @include set-font-size(24px);
+      margin-bottom: 24px;
+    }
+    &__link{
+      @include set-font-size(16px);
+      font-weight: 300;
+    }
+  }
+}

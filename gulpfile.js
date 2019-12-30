@@ -19,9 +19,9 @@ gulp.task('serve', function() {
     browserSync.init({
         server: "./public",
         ghostMode: false,
-        port: 9001,
+        port: 9004,
         ui: {
-            port: 9002
+            port: 9004
         }
     });
 

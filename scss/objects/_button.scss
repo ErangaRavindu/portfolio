@@ -20,6 +20,10 @@ $btn-padding: 12px 24px !default;
     background: $blue-gradient;
     color: white;
   }
+  &--light-blue{
+    background: $light-blue-gradient;
+    color: white;
+  }
   &--o-orange{
     border: 2px solid $orange;
     color: $orange;
@@ -27,6 +31,10 @@ $btn-padding: 12px 24px !default;
   &--o-blue{
     border: 2px solid $blue;
     color: $blue;
+  }
+  &--o-light-blue{
+    border: 2px solid $light-blue;
+    color: $light-blue;
   }
   &:hover{
     box-shadow: $global-box-shadow--hover;

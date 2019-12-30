@@ -1,0 +1,139 @@
+
+.intro{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  //height: calc(100vh - 80px);
+
+  @include set-breakpoint(xs-small) {
+    height: 500px;
+  }
+  @include set-breakpoint(x-small) {
+    height: 600px;
+  }
+  @include set-breakpoint(small) {
+    height: 600px;
+  }
+  @include set-breakpoint(x-small) {
+    height: 700px;
+  }
+  @include set-breakpoint(x-medium) {
+    height: 500px;
+  }
+  @include set-breakpoint(large) {
+    height: 500px;
+  }
+  @include set-breakpoint(x-large) {
+    height: 800px;
+  }
+  .intro__content{
+    min-height: 50px;
+    .calling{
+      width: 100%;
+      font-weight: 300;
+      @include set-font-size(48px);
+    }
+    .name{
+      width: 100%;
+      font-weight: 500;
+      @include set-breakpoint(xs-small) {
+        @include set-font-size(46px);
+      }
+      @include set-breakpoint(x-small) {
+        @include set-font-size(66px);
+      }
+      @include set-breakpoint(small) {
+        @include set-font-size(86px);
+      }
+      @include set-breakpoint(x-small) {
+        @include set-font-size(86px);
+      }
+      @include set-breakpoint(x-medium) {
+        @include set-font-size(86px);
+      }
+      @include set-breakpoint(large) {
+        @include set-font-size(86px);
+      }
+      @include set-breakpoint(x-large) {
+        @include set-font-size(86px);
+      }
+    }
+    .des{
+      width: 100%;
+      font-weight: 400;
+      @include set-font-size(18px);
+    }
+    .link-icons{
+      height: 30px;
+      width: 30px;
+      margin-right: 30px;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      .link-icon{
+        height: 40px;
+        width: 40px;
+        color: black;
+
+      }
+      &:hover{
+        color: $light-blue;
+      }
+    }
+  }
+  .abstract-item--01{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: 0;
+    max-width: 100%;
+  }
+  .abstract-item--02{
+    position: absolute;
+    right: -150px;
+    top: -350px;
+    opacity: 0.8;
+
+    z-index: 1;
+    @include set-breakpoint(xs-small) {
+     display: none;
+    }
+    @include set-breakpoint(x-small) {
+    }
+    @include set-breakpoint(small) {
+    }
+    @include set-breakpoint(x-small) {
+      display: block;
+      width: 500px;
+      height: 500px;
+    }
+    @include set-breakpoint(x-medium) {
+      display: block;
+      width: 500px;
+      height: 500px;
+    }
+    @include set-breakpoint(large) {
+      display: block;
+      width: 500px;
+      height: 500px;
+    }
+    @include set-breakpoint(x-large) {
+      display: block;
+      width: 950px;
+      height: 950px;
+    }
+  }
+  .vector1{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 30;
+  }
+
+}
+
+.recent{
+  margin-bottom: 100px;
+}
